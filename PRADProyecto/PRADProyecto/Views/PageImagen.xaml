@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRADProyecto.Views.PageImagen"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:Convertidor="clr-namespace:PRADProyecto.Controllers">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="avatarImage">calendar.png</x:String>
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <Convertidor:ByteToImage x:Key="BytetoImage"/>
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <xct:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <CollectionView x:Name="ListaContactos" Margin="25" SelectionMode="Single" SelectionChanged="ListaContactos_SelectionChanged">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+                    </CollectionView.ItemsLayout>
+
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5,5,5,5" Margin="10">
+
+                                <Image Source="{Binding foto, Converter={StaticResource BytetoImage}}"/>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

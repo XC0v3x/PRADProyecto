@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRADProyecto.MainPage"
+             BackgroundImageSource="bg1.jpg">
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="Beige" Padding="20" CornerRadius="0">
+                <Label Text="Bienvenido Usuario" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36"/>
+            </Frame>
+            <Image Source="logoU.png" WidthRequest="80" HeightRequest="110"/>
+
+            <Button Text="Agenda" FontSize="Medium" x:Name="BtnAgenda" Padding="5,5,5,5" Margin="15" ImageSource="Contact.png" Clicked="BtnAgenda_Clicked"/>
+            <Button Text="Sitios" FontSize="Medium" x:Name="BtnSitios" Padding="5,5,5,5" Margin="15" ImageSource="Location.png" Clicked="BtnSitios_Clicked"/>
+            <Button Text="Salvar Contacto" FontSize="Medium" x:Name="BtnAgregar" Padding="5,5,5,5" Margin="15" ImageSource="AddC.png" Clicked="BtnAgregar_Clicked"/>
+            <Button Text="Salvar Sitio" FontSize="Medium" x:Name="BtnAgregarS" Padding="5,5,5,5" Margin="15" ImageSource="AddC.png" Clicked="BtnAgregarS_Clicked"/>
+            <Button Text="???" FontSize="Medium" x:Name="BtnUnknown" Padding="5,5,5,5" Margin="30" ImageSource="Unknown.png" Clicked="BtnUnknown_Clicked"/>
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

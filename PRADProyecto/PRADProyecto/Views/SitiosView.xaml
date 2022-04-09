@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRADProyecto.Views.SitiosView"
+             BackgroundImageSource="bg1.jpg">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="TbAgregar" Text="Agregar Sitio" Clicked="TbAgregar_Clicked" IconImageSource="add.png"/>
+        <ToolbarItem x:Name="TbBorrar" Text="Borrar Registro" Clicked="TbBorrar_Clicked" IconImageSource="delete.png"/>
+        <ToolbarItem x:Name="TbMapa" Text="Ver Mapa" Clicked="TbMapa_Clicked" IconImageSource="Location.png"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="Gray" Padding="5,5,5,5" Margin="15">
+
+                <Frame BackgroundColor="Beige" Padding="15" CornerRadius="15">
+                    <SearchBar Placeholder="Buscar Sitio" Keyboard="Chat" CancelButtonColor="Black" FontSize="Medium" HorizontalTextAlignment="Start" HeightRequest="20" FontAttributes="Bold" TextChanged="SearchBar_TextChanged"/>
+                </Frame>
+
+                <CollectionView x:Name="ListaSitios" Margin="25" SelectionMode="Single" SelectionChanged="ListaSitios_SelectionChanged">
+                    <CollectionView.Header>
+                        <StackLayout BackgroundColor="Beige" Padding="5,5,5,5" Margin="10">
+                            <Label Text="Sitios" FontSize="Medium" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+                    </CollectionView.ItemsLayout>
+
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5,5,5,5" Margin="10">
+
+                                <Label Text="{Binding Descripcion}" />
+
+                                <Label Text="{Binding Pais}" />
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

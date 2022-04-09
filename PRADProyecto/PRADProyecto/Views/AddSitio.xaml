@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRADProyecto.Views.AddSitio"
+             BackgroundImageSource="bg1.jpg">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="Gray" Padding="5,5,5,5" Margin="15">
+                <Image Source="logoU.png" WidthRequest="80" HeightRequest="100"/>
+                
+                <Label Text="Agregar Un Sitio" FontSize="Medium" Padding="5,5,5,5" Margin="15" HorizontalOptions="Center"/>
+
+                <Image x:Name="Foto" BackgroundColor="AliceBlue" WidthRequest="120" HeightRequest="150"/>
+                <Button x:Name="BtnFoto" Text="Tomar Foto" VerticalOptions="Center" Padding="5,5,5,5" Margin="15" Clicked="BtnFoto_Clicked"/>
+
+                <Label Text="Ingrese la Descripcion o Nombre" FontSize="Medium"/>
+                <Entry x:Name="TxtDesc" Keyboard="Text" Placeholder="*Campo Requerido"/>
+
+                <Label Text="Ingrese la Longitud" FontSize="Medium"/>
+                <Entry x:Name="TxtLongitud" Keyboard="Numeric" Placeholder="0°"/>
+
+                <Label Text="Ingrese la Latitud" FontSize="Medium"/>
+                <Entry x:Name="TxtLatitud" Keyboard="Numeric" Placeholder="0°"/>
+
+                <Label Text="Seleccione Un Pais" FontSize="Medium"/>
+                <Picker Title="Pais" x:Name="PkPais">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Honduras (504)</x:String>
+                            <x:String>El Salvador (503)</x:String>
+                            <x:String>Guatemala (502)</x:String>
+                            <x:String>Nicaragua (505)</x:String>
+                            <x:String>Belize (501)</x:String>
+                            <x:String>Costa Rica (506)</x:String>
+                            <x:String>Unknown (000)</x:String>
+                            <x:String>Mordor (010)</x:String>
+                            <x:String>The World That Never Was (606)</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Ingrese Notas para el Sitio" FontSize="Medium"/>
+                <Entry x:Name="TxtNota" Keyboard="Text" Placeholder="*Campo Requerido"/>
+                
+                <Button x:Name="BtnGuardar" Text="Guardar Registro" Padding="5,5,5,5" Margin="15" Clicked="BtnGuardar_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
